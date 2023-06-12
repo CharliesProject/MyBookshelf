@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimen name="main_image_size">100dp</dimen>
+    <dimen name="small_image_size">150dp</dimen>
+
+    <dimen name="order_cupcake_button_width">250dp</dimen>
+
+    <dimen name="side_margin">16dp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="little_margin">4dp</dimen>
+    <dimen name="gap">32dp</dimen>
+</resources>

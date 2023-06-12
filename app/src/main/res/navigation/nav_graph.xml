@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainMenuFragment">
+
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.example.mybookshelf.views.MainMenuFragment"
+        android:label="MainMenuFragment" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_currentlyReadFragment"
+            app:destination="@id/currentlyReadFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_readFragment"
+            app:destination="@id/readFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_myBooksFragment"
+            app:destination="@id/myBooksFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_libraryBooksFragment"
+            app:destination="@id/libraryBooksFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_borrowedBooksFragment"
+            app:destination="@id/borrowedBooksFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_wishlistBooksFragment"
+            app:destination="@id/wishlistBooksFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_booksListFragment"
+            app:destination="@id/booksListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/currentlyReadFragment"
+        android:name="com.example.mybookshelf.views.CurrentlyReadFragment"
+        android:label="CurrentlyReadFragment" />
+    <fragment
+        android:id="@+id/readFragment"
+        android:name="com.example.mybookshelf.views.ReadFragment"
+        android:label="fragment_read"
+        tools:layout="@layout/fragment_read" />
+    <fragment
+        android:id="@+id/myBooksFragment"
+        android:name="com.example.mybookshelf.views.MyBooksFragment"
+        android:label="fragment_my_books"
+        tools:layout="@layout/fragment_my_books" />
+    <fragment
+        android:id="@+id/libraryBooksFragment"
+        android:name="com.example.mybookshelf.views.LibraryBooksFragment"
+        android:label="fragment_library_books"
+        tools:layout="@layout/fragment_library_books" />
+    <fragment
+        android:id="@+id/borrowedBooksFragment"
+        android:name="com.example.mybookshelf.views.BorrowedBooksFragment"
+        android:label="fragment_borrowed_books"
+        tools:layout="@layout/fragment_borrowed_books" />
+    <fragment
+        android:id="@+id/wishlistBooksFragment"
+        android:name="com.example.mybookshelf.views.WishlistBooksFragment"
+        android:label="fragment_wishlist_books"
+        tools:layout="@layout/fragment_wishlist_books" />
+    <fragment
+        android:id="@+id/booksListFragment"
+        android:name="com.example.mybookshelf.views.BooksListFragment"
+        android:label="fragment_books_list"
+        tools:layout="@layout/fragment_books_list" />
+</navigation>

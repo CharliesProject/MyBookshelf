@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- CardView style -->
+    <style name="Widget.MyBookShelf.CardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="colorSecondary">@color/purple_200</item>
+        <item name="colorSurface">@color/purple_500</item>
+        <item name="colorOnSurfaceVariant">@color/purple_700</item>
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">8dp</item>
+        <item name="cornerRadius">36dp</item>
+        <item name="cardElevation">16dp</item>
+        <item name="android:padding">36dp</item>
+    </style>
+
+    <style name="Theme.MyBookShelf" parent="Theme.Material3.DayNight">
+        <item name="colorSecondary">@color/purple_200</item>
+        <item name="colorSurface">@color/purple_500</item>
+        <item name="colorOnSurfaceVariant">@color/purple_700</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.MediumComponent</item>
+    </style>
+
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+</resources>
