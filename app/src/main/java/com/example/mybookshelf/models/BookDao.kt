@@ -7,8 +7,11 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface BookDao {
 
-    @Query("SELECT * FROM book")
+    @Query("SELECT * FROM book ORDER BY book_title ASC")
     fun getAllBooks(): Flow<List<Book>>
+
+    @Query("SELECT * FROM book WHERE bookId = :id")
+    fun getBook(id: Int): Flow<Book>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(book: Book)

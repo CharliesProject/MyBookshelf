@@ -6,4 +6,21 @@
     <string name="library_books">Library books</string>
     <string name="borrowed_books">Borrowed books</string>
     <string name="wishlist_books">Wishlist books</string>
+
+    <string name="dialog_title">Add new book</string>
+    <string name="dialog_message">Turn on internet connection for scanning ISBN code or add new book manually.</string>
+    <string name="dialog_isbn_scanner">Scan ISBN code</string>
+    <string name="dialog_back_to_list">Back</string>
+    <string name="dialog_add_manually">Add manually</string>
+
+    <string name="add_book_title_req">Add Book Title</string>
+    <string name="add_book_author_req">Add Author</string>
+    <string name="add_book_genre_req">Add Genre</string>
+    <string name="add_book_rank_req">Add Rank</string>
+    <string name="add_book_button_text">Save Book</string>
+
+    <string name="cancel_button_text">Cancel</string>
+    <string name="dialog_delete_book">Delete</string>
+    <string name="dialog_delete_book_message">Are you certain that you want to remove this book from the shelf</string>
+    <string name="dialog_delete_book_title">Delete book</string>
 </resources>

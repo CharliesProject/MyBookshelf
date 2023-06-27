@@ -3,67 +3,71 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp">
+    android:layout_height="150dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/small_margin"
-        android:padding="@dimen/small_margin">
+        android:padding="4dp">
 
-            <ImageView
-                android:id="@+id/book_image"
-                android:layout_width="@dimen/main_image_size"
-                android:layout_height="match_parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@android:drawable/btn_dialog" />
+        <ImageView
+            android:id="@+id/book_image"
+            android:layout_width="@dimen/main_image_size"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="4dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/book_text_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_image_24" />
 
         <LinearLayout
             android:id="@+id/book_text_container"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginEnd="4dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/book_rank"
+            app:layout_constraintEnd_toStartOf="@+id/book_rank"
             app:layout_constraintStart_toEndOf="@id/book_image"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/book_title"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                tools:text="Title"
-                android:padding="@dimen/little_margin"/>
+                android:padding="@dimen/little_margin"
+                tools:text="Title" />
 
             <TextView
                 android:id="@+id/book_author"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                tools:text="Author"
-                android:padding="@dimen/little_margin"/>
+                android:padding="@dimen/little_margin"
+                tools:text="Author" />
 
             <TextView
                 android:id="@+id/book_genre"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                tools:text="Genre"
-                android:padding="@dimen/little_margin"/>
+                android:padding="@dimen/little_margin"
+                tools:text="Genre" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/book_rank"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="4dp"
+            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/book_text_container"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="7" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

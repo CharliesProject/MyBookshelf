@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".views.BookDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/book_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/small_margin">
+
+        <ImageView
+            android:id="@+id/book_detail_image"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/book_detail_text_container"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_book_24" />
+
+        <LinearLayout
+            android:id="@+id/book_detail_text_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintBottom_toBottomOf="@id/book_detail_image"
+            app:layout_constraintStart_toEndOf="@id/book_detail_image"
+            app:layout_constraintEnd_toStartOf="@id/book_detail_rank"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/book_detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Title"
+                tools:text="Title"
+                android:padding="@dimen/little_margin"/>
+
+            <TextView
+                android:id="@+id/book_detail_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Author"
+                tools:text="Author"
+                android:padding="@dimen/little_margin"/>
+
+            <TextView
+                android:id="@+id/book_detail_genre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Genre"
+                tools:text="Genre"
+                android:padding="@dimen/little_margin"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/book_detail_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintBottom_toBottomOf="@id/book_detail_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/book_detail_text_container"
+            android:text="7.7"
+            tools:text="7" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/delete_book_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/small_margin"
+            android:src="@drawable/ic_delete_forever_24"
+            app:backgroundTint="#F44336"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/book_detail_image" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/edit_book_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_margin="@dimen/small_margin"
+            android:src="@drawable/ic_edit_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/book_detail_image" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

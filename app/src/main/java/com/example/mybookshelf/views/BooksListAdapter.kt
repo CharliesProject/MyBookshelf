@@ -1,24 +1,32 @@
 package com.example.mybookshelf.views
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mybookshelf.R
 import com.example.mybookshelf.databinding.BookModelItemBinding
 import com.example.mybookshelf.models.Book
 
-class BooksListAdapter(private val onItemClicked: (Book) -> Unit) : ListAdapter<Book, BooksListAdapter.BooksViewHolder>(DiffCallback) {
+class BooksListAdapter(private val onItemClicked: (Book) -> Unit) :
+    ListAdapter<Book, BooksListAdapter.BooksViewHolder>(DiffCallback) {
+
+    companion object DiffCallback : DiffUtil.ItemCallback<Book>() {
+        override fun areItemsTheSame(oldItem: Book, newItem: Book): Boolean {
+            return oldItem.bookId == newItem.bookId
+        }
+        override fun areContentsTheSame(oldItem: Book, newItem: Book): Boolean {
+            return oldItem.bookTitle == newItem.bookTitle && oldItem.bookAuthor == newItem.bookAuthor
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BooksViewHolder {
+
         return BooksViewHolder(
             BookModelItemBinding.inflate(
                 LayoutInflater.from(
                     parent.context
-                )
+                ), parent, false
             )
         )
     }
@@ -46,16 +54,4 @@ class BooksListAdapter(private val onItemClicked: (Book) -> Unit) : ListAdapter<
         }
     }
 
-
-    companion object {
-        private val DiffCallback = object : DiffUtil.ItemCallback<Book>() {
-            override fun areItemsTheSame(oldItem: Book, newItem: Book): Boolean {
-                return oldItem === newItem
-            }
-
-            override fun areContentsTheSame(oldItem: Book, newItem: Book): Boolean {
-                return oldItem.bookTitle == newItem.bookTitle
-            }
-        }
-    }
 }

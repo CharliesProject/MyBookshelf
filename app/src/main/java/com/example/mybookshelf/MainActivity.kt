@@ -1,14 +1,10 @@
 package com.example.mybookshelf
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.mybookshelf.vievmodels.BooksListsViewModel
-import com.example.mybookshelf.vievmodels.BooksListsViewModelFactory
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 

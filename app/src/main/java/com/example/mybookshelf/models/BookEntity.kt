@@ -5,10 +5,10 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
-@Entity         //(tableName = "bookshelf")
+@Entity
 data class Book(
     @PrimaryKey(autoGenerate = true)
-    val bookId: Int?,
+    val bookId: Int = 0,
     @ColumnInfo(name = "book_title")
     val bookTitle: String,
     @ColumnInfo(name = "book_author")

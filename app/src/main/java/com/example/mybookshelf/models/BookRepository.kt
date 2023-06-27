@@ -7,9 +7,6 @@ class BookRepository(private val database: BookDao) {
 
     val allBooks: Flow<List<Book>> = database.getAllBooks()
 
-    // By default Room runs suspend queries off the main thread, therefore, we don't need to
-    // implement anything else to ensure we're not doing long running database work
-    // off the main thread.
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
     suspend fun insert(book: Book) {
@@ -21,4 +18,17 @@ class BookRepository(private val database: BookDao) {
     suspend fun delete(book: Book) {
         database.delete(book)
     }
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun update(book: Book) {
+        database.update(book)
+    }
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    fun getBook(id: Int): Flow<Book> {
+        return database.getBook(id)
+    }
+
 }
