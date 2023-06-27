@@ -1,17 +1,17 @@
 # MyBookshelf app
 
-### The application is under development!
+# The application is under development!
 
-# Current state of app
+## Current state of app
 
 - working part of temporary UI
 - SQLite database created
 - working and visible queries: INSERT, UPDATE, DELETE
 - connection via ViewModel and Repository
 
-### The application is under development!
+# The application is under development!
 
-# Screenshots of app current state (temporary UI)
+## Screenshots of  current state of app (temporary UI)
 
 ![Main Menu](Screenshot_20230627_201908.png)
 ![Main Books List](Screenshot_20230627_201927.png)
@@ -33,4 +33,4 @@ from friends, or already read.
 
 For items marked as borrowed, it will be possible to set notifications for upcoming return dates.
 
-### The application is under development!
+# The application is under development!
