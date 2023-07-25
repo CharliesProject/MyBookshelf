@@ -17,6 +17,6 @@ data class Book(
     val bookGenre: String,
     @ColumnInfo(name = "book_rank")
     val bookRank: Double,
-/*    @ColumnInfo(name = "book_image")
-    val bookImage: Int*/
+    @ColumnInfo(name = "book_image")
+    val bookImage: ByteArray
 )

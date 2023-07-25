@@ -5,6 +5,7 @@
 ## Current state of app
 
 - working part of temporary UI
+- Add Book cover via camera
 - SQLite database created
 - working and visible queries: INSERT, UPDATE, DELETE
 - connection via ViewModel and Repository
@@ -13,10 +14,10 @@
 
 ## Screenshots of  current state of app (temporary UI)
 
+![Main Books List](Screenshot_20230725_200400.png)
+![Book Detail](Screenshot_20230725_200437.png)
+![Insert/Update Book](Screenshot_20230725_200505.png)
 ![Main Menu](Screenshot_20230627_201908.png)
-![Main Books List](Screenshot_20230627_201927.png)
-![Book Detail](Screenshot_20230627_201940.png)
-![Insert/Update Book](Screenshot_20230627_202006.png)
 
 ## Description & Design assumptions/requirements
 

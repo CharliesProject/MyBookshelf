@@ -1,5 +1,7 @@
 package com.example.mybookshelf.views
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -44,12 +46,17 @@ class BooksListAdapter(private val onItemClicked: (Book) -> Unit) :
     class BooksViewHolder(private var binding: BookModelItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        private fun convertByteArrayToImage(byteArray: ByteArray): Bitmap? {
+            return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
+        }
+
         fun bind(book: Book) {
             binding.apply {
                 bookTitle.text = book.bookTitle
                 bookAuthor.text = book.bookAuthor
                 bookGenre.text = book.bookGenre
                 bookRank.text = book.bookRank.toString()
+                bookImage.setImageBitmap(convertByteArrayToImage(book.bookImage))
             }
         }
     }

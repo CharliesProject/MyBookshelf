@@ -14,13 +14,15 @@ class BooksListsViewModel(private val repository: BookRepository) : ViewModel() 
         bookTitle: String,
         bookAuthor: String,
         bookGenre: String,
-        bookRank: String
+        bookRank: String,
+        bookImage: ByteArray
     ) {
         val newBook = getNewBookEntry(
             bookTitle,
             bookAuthor,
             bookGenre,
-            bookRank
+            bookRank,
+            bookImage
         )
         insertBook(newBook)
     }
@@ -29,13 +31,15 @@ class BooksListsViewModel(private val repository: BookRepository) : ViewModel() 
         bookTitle: String,
         bookAuthor: String,
         bookGenre: String,
-        bookRank: String
+        bookRank: String,
+        bookImage: ByteArray
     ): Book {
         return Book(
             bookTitle = bookTitle,
             bookAuthor = bookAuthor,
             bookGenre = bookGenre,
-            bookRank = bookRank.toDouble()
+            bookRank = bookRank.toDouble(),
+            bookImage = bookImage
         )
     }
 
@@ -44,17 +48,18 @@ class BooksListsViewModel(private val repository: BookRepository) : ViewModel() 
         bookTitle: String,
         bookAuthor: String,
         bookGenre: String,
-        bookRank: String
+        bookRank: String,
+        bookImage: ByteArray
     ) {
         val book = Book(
             bookId = id,
             bookTitle = bookTitle,
             bookAuthor = bookAuthor,
             bookGenre = bookGenre,
-            bookRank = bookRank.toDouble()
+            bookRank = bookRank.toDouble(),
+            bookImage = bookImage
         )
         viewModelScope.launch(Dispatchers.IO) {
-            // TD O: call the DAO method to update a forageable to the database here
             repository.update(book)
         }
     }
@@ -63,7 +68,7 @@ class BooksListsViewModel(private val repository: BookRepository) : ViewModel() 
         bookTitle: String,
         bookAuthor: String,
         bookGenre: String,
-        bookRank: String
+        bookRank: String,
     ): Boolean {
         if (bookTitle.isBlank() || bookAuthor.isBlank() || bookGenre.isBlank() || bookRank.isBlank()) {
             return false

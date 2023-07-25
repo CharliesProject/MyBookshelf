@@ -1,5 +1,7 @@
 package com.example.mybookshelf.views
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -49,12 +51,17 @@ class BookDetailFragment : Fragment() {
         }
     }
 
+    private fun convertByteArrayToImage(byteArray: ByteArray): Bitmap? {
+        return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
+    }
+
     private fun bind(book: Book) {
         binding?.apply {
             bookDetailTitle.text = book.bookTitle
             bookDetailAuthor.text = book.bookAuthor
             bookDetailGenre.text = book.bookGenre
             bookDetailRank.text = book.bookRank.toString()
+            bookDetailImage.setImageBitmap(convertByteArrayToImage(book.bookImage))
         }
     }
 
